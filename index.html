@@ -246,6 +246,62 @@
             margin-bottom: 1rem;
         }
 
+        /* Dark box variant for "Who This Is For" */
+        .content-box-dark {
+            background-color: #4A3428;
+            color: #F5F0E8;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+
+        .content-box-dark h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #F5F0E8;
+        }
+
+        .content-box-dark p {
+            font-size: 1.05rem;
+            color: #DDD5C7;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .content-box-dark strong {
+            color: #F5F0E8;
+        }
+
+        /* Manifesto style for "Our Style" */
+        .content-box-manifesto {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .content-box-manifesto h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .manifesto-highlight {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #4A3428;
+            margin: 2rem 0;
+            line-height: 1.3;
+            border-left: 4px solid #4A3428;
+            padding-left: 1.5rem;
+        }
+
+        /* Section icons */
+        .section-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
         /* Pricing Box */
         .pricing-box {
             background-color: #fff;
@@ -566,17 +622,21 @@
     <!-- Who This Is For + Our Style -->
     <section class="two-col-section">
         <div class="two-col-grid">
-            <div class="content-box">
+            <div class="content-box-dark">
+                <span class="section-icon">👥</span>
                 <h2>Who This Is For</h2>
                 <p>It's for families who value something real — not staged or polished.</p>
                 <p>It's not meant to be influencer content, acting, or a formal production.</p>
                 <p><strong>It's meant to feel natural and meaningful.</strong></p>
             </div>
 
-            <div class="content-box">
+            <div class="content-box-manifesto">
+                <span class="section-icon">🎬</span>
                 <h2>Our Style</h2>
                 <p>We're not trying to create a perfect version of your family.</p>
-                <p><strong>We're trying to preserve the true one.</strong></p>
+                <div class="manifesto-highlight">
+                    We're trying to preserve the true one.
+                </div>
                 <p>Real reactions matter more than perfect words.</p>
                 <p>The goal is something you'll genuinely want to watch again.</p>
             </div>
