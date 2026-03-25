@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Legacy Sessions</title>
+    <meta name="description" content="Real people. Real connection. Preserved. Legacy Sessions exists to capture what photos can't.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #2C2419;
+            background-color: #F5F0E8;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #EBE6DC;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2C2419;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #2C2419;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links a.active {
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background-color: #4A3428;
+            color: #F5F0E8 !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 6rem 5% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #6B5D51;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn-primary {
+            background-color: #4A3428;
+            color: #F5F0E8;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #6B5D51;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-alt {
+            background-color: #fff;
+        }
+
+        .section-center {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-content p {
+            font-size: 1.2rem;
+            color: #6B5D51;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Focus Pillars */
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .pillar {
+            text-align: center;
+        }
+
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #4A3428;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .pillar-icon svg {
+            width: 40px;
+            height: 40px;
+            color: #F5F0E8;
+        }
+
+        .pillar h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-photo {
+            aspect-ratio: 3/4;
+            background-color: #DDD5C7;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-member p {
+            color: #6B5D51;
+            line-height: 1.7;
+        }
+
+        /* Session Feel */
+        .feel-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feel-point {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feel-point-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feel-point p {
+            color: #6B5D51;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/5;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #DDD5C7;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(74,52,40,0.9), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: #F5F0E8;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #DDD5C7;
+            padding: 2rem 0;
+        }
+
+        .faq-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            font-size: 1.1rem;
+            color: #6B5D51;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 6rem 5%;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            text-align: center;
+            background-color: #F5F0E8;
+            color: #6B5D51;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Legacy Sessions</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="index.html#what">What This Is</a>
+            <a href="index.html#how">How It Works</a>
+            <a href="#contact" class="nav-cta">Request a Call</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Real people. Real connection. Preserved.</h1>
+        <p>Legacy Sessions exists to capture what photos can't — how someone speaks, laughs, reacts, and connects with the people they love.</p>
+        <a href="#contact" class="btn-primary">Request a Call</a>
+    </section>
+
+    <!-- Why We Do This -->
+    <section class="section-alt">
+        <div class="section-center">
+            <h2 class="section-title">Why We Do This</h2>
+            <div class="section-content">
+                <p>Over time, memories fade in very specific ways.</p>
+                <p>You remember what someone looked like, but not quite how they sounded or interacted.</p>
+                <p>A Legacy Session helps families keep the parts that matter most — the personality, humor, and presence of someone they care about.</p>
+            </div>
+
+            <div class="pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3>Authentic over performative</h3>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3>Comfortable over polished</h3>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                        </svg>
+                    </div>
+                    <h3>Meaningful over impressive</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section>
+        <h2 class="section-title" style="text-align: center;">Who We Are</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-photo">
+                    <img src="images/main.jpg" alt="Founder">
+                </div>
+                <h3>[Founder Name]</h3>
+                <p>We created Legacy Sessions to preserve ordinary conversations that later become priceless.</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">
+                    <img src="images/main.jpg" alt="Founder">
+                </div>
+                <h3>[Founder Name]</h3>
+                <p>Our role is simply to make people comfortable and let the conversation unfold naturally.</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">
+                    <img src="images/main.jpg" alt="Founder">
+                </div>
+                <h3>[Founder Name]</h3>
+                <p>Every session reminds us why this work matters — capturing moments before they're gone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What a Session Feels Like -->
+    <section class="section-alt">
+        <div class="section-center">
+            <h2 class="section-title">What a Session Feels Like</h2>
+            <div class="section-content">
+                <p style="font-size: 1.4rem; font-style: italic;">It doesn't feel like being filmed.</p>
+                <p>It feels like sitting down and having a meaningful conversation — with gentle prompts if needed.</p>
+            </div>
+
+            <div class="feel-points">
+                <div class="feel-point">
+                    <div class="feel-point-icon">⏸️</div>
+                    <p><strong>You can pause anytime.</strong></p>
+                </div>
+                <div class="feel-point">
+                    <div class="feel-point-icon">💝</div>
+                    <p><strong>Emotional moments are welcome.</strong></p>
+                </div>
+                <div class="feel-point">
+                    <div class="feel-point-icon">✓</div>
+                    <p><strong>Nothing has to be perfect.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">Gallery</h2>
+            <p style="color: #6B5D51; font-size: 0.95rem;">(Examples shown with permission. Most sessions remain private.)</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/main.jpg" alt="Legacy session">
+                <div class="gallery-caption">Stories you've heard a hundred times</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/main.jpg" alt="Legacy session">
+                <div class="gallery-caption">Advice from a parent to their children</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/main.jpg" alt="Legacy session">
+                <div class="gallery-caption">Remembering childhood together</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/main.jpg" alt="Legacy session">
+                <div class="gallery-caption">Conversations worth keeping</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/main.jpg" alt="Legacy session">
+                <div class="gallery-caption">The way they laugh</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/main.jpg" alt="Legacy session">
+                <div class="gallery-caption">Moments you'll return to</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-alt">
+        <h2 class="section-title" style="text-align: center;">FAQ</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>How long is a session?</h3>
+                <p>Up to 2 hours.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Where does it happen?</h3>
+                <p>In-home anywhere in San Diego County.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do we need to prepare?</h3>
+                <p>No — we guide the conversation naturally.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What do we receive?</h3>
+                <p>A lightly edited legacy film and 10–20 short shareable clips.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How much does it cost?</h3>
+                <p>$1,500 per session.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is it awkward?</h3>
+                <p>Usually only for a minute or two. It quickly becomes a normal conversation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <h2>Preserve this while you still can.</h2>
+        <a href="#contact" class="btn-primary">Request a Call</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Legacy Sessions • Serving San Diego County, California</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
