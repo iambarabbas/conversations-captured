@@ -226,6 +226,26 @@
             margin-bottom: 1rem;
         }
 
+        /* Content Box - for Who/Style sections */
+        .content-box {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .content-box h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-box p {
+            font-size: 1.05rem;
+            color: #6B5D51;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
         /* Pricing Box */
         .pricing-box {
             background-color: #fff;
@@ -296,26 +316,36 @@
 
         .step {
             text-align: center;
+            background-color: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.12);
         }
 
         .step-number {
             width: 80px;
             height: 80px;
-            background-color: #fff;
-            border: 2px solid #4A3428;
+            background-color: #4A3428;
+            color: #F5F0E8;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             margin: 0 auto 1.5rem;
-            color: #4A3428;
             font-weight: 600;
         }
 
         .step h3 {
             font-size: 1.2rem;
             margin-bottom: 1rem;
+            color: #2C2419;
         }
 
         .step p {
@@ -563,14 +593,14 @@
     <!-- Who This Is For + Our Style -->
     <section class="two-col-section">
         <div class="two-col-grid">
-            <div class="two-col-content">
+            <div class="content-box">
                 <h2>Who This Is For</h2>
                 <p>It's for families who value something real — not staged or polished.</p>
                 <p>It's not meant to be influencer content, acting, or a formal production.</p>
                 <p><strong>It's meant to feel natural and meaningful.</strong></p>
             </div>
 
-            <div class="two-col-content">
+            <div class="content-box">
                 <h2>Our Style</h2>
                 <p>We're not trying to create a perfect version of your family.</p>
                 <p><strong>We're trying to preserve the true one.</strong></p>
