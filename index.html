@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legacy Sessions - Capture the everyday moments you'll miss the most</title>
-    <meta name="description" content="We film real, natural conversations between you and someone you love — preserving their voice, personality, and stories before time quietly changes them.">
+    <title>Legacy Sessions - One real conversation with a parent, kept forever</title>
+    <meta name="description" content="We film real, natural conversations between you and someone you love — preserving their voice, personality, and stories.">
     
     <style>
         * {
@@ -14,20 +14,20 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
-            color: #4A3428;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #2C2419;
             background-color: #F5F0E8;
             line-height: 1.6;
         }
 
         h1, h2, h3 {
-            font-weight: 400;
+            font-weight: 600;
             line-height: 1.2;
         }
 
         /* Navigation */
         nav {
-            padding: 2rem 5%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -35,16 +35,22 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #4A3428;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2C2419;
             text-decoration: none;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
         .nav-links a {
-            margin-left: 2rem;
-            color: #4A3428;
+            color: #2C2419;
             text-decoration: none;
+            font-size: 0.95rem;
             transition: opacity 0.3s;
         }
 
@@ -52,42 +58,65 @@
             opacity: 0.7;
         }
 
+        .nav-cta {
+            background-color: #4A3428;
+            color: #F5F0E8 !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+        }
+
         /* Hero Section */
         .hero {
-            padding: 6rem 5% 4rem;
+            padding: 4rem 5%;
             max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            padding-right: 2rem;
+        }
+
+        .hero-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6B5D51;
+            margin-bottom: 1.5rem;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            max-width: 800px;
+            line-height: 1.1;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
-            max-width: 700px;
             color: #6B5D51;
+            line-height: 1.7;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 4rem;
+            gap: 1rem;
         }
 
         .btn-primary {
             background-color: #4A3428;
             color: #F5F0E8;
-            padding: 1rem 2.5rem;
+            padding: 0.9rem 2rem;
             text-decoration: none;
             border-radius: 4px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: background-color 0.3s;
             border: none;
             cursor: pointer;
+            display: inline-block;
         }
 
         .btn-primary:hover {
@@ -97,12 +126,13 @@
         .btn-secondary {
             background-color: transparent;
             color: #4A3428;
-            padding: 1rem 2.5rem;
+            padding: 0.9rem 2rem;
             text-decoration: none;
             border-radius: 4px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             border: 2px solid #4A3428;
             transition: all 0.3s;
+            display: inline-block;
         }
 
         .btn-secondary:hover {
@@ -112,110 +142,194 @@
 
         .hero-image {
             width: 100%;
-            max-width: 1200px;
-            height: 600px;
+            height: 500px;
             background-color: #DDD5C7;
             border-radius: 8px;
-            margin-top: 3rem;
+            overflow: hidden;
         }
 
-        /* Content Sections */
-        section {
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Photo Grid Section */
+        .photo-grid-section {
+            padding: 5rem 5%;
+            background-color: #EBE6DC;
+        }
+
+        .photo-grid-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .photo-grid-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .photo-grid-content .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6B5D51;
+            margin-bottom: 1rem;
+        }
+
+        .photo-grid-content p {
+            font-size: 1.05rem;
+            color: #6B5D51;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .photo-grid-item {
+            aspect-ratio: 1;
+            background-color: #C4BAA8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .photo-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Two Column Section */
+        .two-col-section {
             padding: 5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .section-alt {
-            background-color: #fff;
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .section-content {
-            font-size: 1.2rem;
-            line-height: 1.8;
+        .two-col-content .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: #6B5D51;
-            max-width: 800px;
+            margin-bottom: 1rem;
         }
 
-        .section-content p {
+        .two-col-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .two-col-content p {
+            font-size: 1.05rem;
+            color: #6B5D51;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .quote {
+            border-left: 3px solid #4A3428;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #4A3428;
+        }
+
+        /* Pricing Box */
+        .pricing-box {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .pricing-box h3 {
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
         }
 
-        /* What This Is Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .pricing-box ul {
+            list-style: none;
+            margin-bottom: 2rem;
         }
 
-        .feature-item {
-            padding: 2rem;
-            background-color: #fff;
-            border-radius: 8px;
+        .pricing-box li {
+            padding: 0.5rem 0;
+            color: #6B5D51;
+            font-size: 1rem;
         }
 
-        .feature-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .pricing-box li:before {
+            content: "• ";
+            color: #4A3428;
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
 
-        /* Investment Section */
-        .pricing {
+        .price {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #4A3428;
+            margin: 1.5rem 0;
+        }
+
+        .pricing-note {
+            font-size: 0.95rem;
+            color: #6B5D51;
+            line-height: 1.6;
+        }
+
+        /* How It Works */
+        .how-section {
+            padding: 5rem 5%;
+            background-color: #EBE6DC;
+        }
+
+        .how-container {
+            max-width: 1400px;
+            margin: 0 auto;
             text-align: center;
-            padding: 4rem 5%;
-            background-color: #4A3428;
-            color: #F5F0E8;
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 3rem auto;
         }
 
-        .pricing h2 {
+        .how-container .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6B5D51;
+            margin-bottom: 1rem;
+        }
+
+        .how-container h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
-        .pricing .price {
-            font-size: 3rem;
-            margin: 2rem 0;
-        }
-
-        .pricing p {
-            font-size: 1.2rem;
-            color: #DDD5C7;
-        }
-
-        /* Why Section */
-        .why-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .why-content p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
+        .how-container .subtitle {
+            font-size: 1.1rem;
             color: #6B5D51;
+            margin-bottom: 4rem;
         }
 
-        .highlight {
-            font-style: italic;
-            color: #4A3428;
-            display: block;
-            margin: 1rem 0;
-            padding-left: 2rem;
-        }
-
-        /* How It Works */
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 3rem;
             margin-top: 3rem;
         }
@@ -224,37 +338,78 @@
             text-align: center;
         }
 
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background-color: #4A3428;
-            color: #F5F0E8;
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border: 2px solid #4A3428;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin: 0 auto 1.5rem;
         }
 
         .step h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
 
         .step p {
             color: #6B5D51;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        /* Contact Form */
+        /* Contact Section */
         .contact-section {
-            background-color: #fff;
             padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 6rem;
+        }
+
+        .contact-content .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6B5D51;
+            margin-bottom: 1rem;
+        }
+
+        .contact-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .contact-content p {
+            font-size: 1.05rem;
+            color: #6B5D51;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        /* Form */
         .form-container {
-            max-width: 700px;
-            margin: 0 auto;
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
         }
 
         .form-group {
@@ -264,22 +419,22 @@
         label {
             display: block;
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            color: #4A3428;
+            font-size: 0.95rem;
+            color: #2C2419;
         }
 
         input, textarea {
             width: 100%;
-            padding: 1rem;
-            border: 2px solid #DDD5C7;
+            padding: 0.9rem;
+            border: 1px solid #DDD5C7;
             border-radius: 4px;
-            font-family: 'Georgia', serif;
+            font-family: inherit;
             font-size: 1rem;
             background-color: #F5F0E8;
         }
 
         textarea {
-            min-height: 150px;
+            min-height: 120px;
             resize: vertical;
         }
 
@@ -287,8 +442,8 @@
             width: 100%;
             background-color: #4A3428;
             color: #F5F0E8;
-            padding: 1.2rem;
-            font-size: 1.2rem;
+            padding: 1rem;
+            font-size: 1.05rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -299,238 +454,266 @@
             background-color: #6B5D51;
         }
 
-        /* Footer */
-        footer {
-            padding: 3rem 5%;
+        .form-note {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #6B5D51;
             text-align: center;
-            background-color: #4A3428;
-            color: #F5F0E8;
         }
 
-        footer p {
-            color: #DDD5C7;
+        /* Footer */
+        footer {
+            padding: 2rem 5%;
+            text-align: center;
+            background-color: #F5F0E8;
+            color: #6B5D51;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+            .hero, .photo-grid-container, .two-col-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                gap: 2rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
             }
+        }
 
-            .cta-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
+        @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
 
-            .section-title {
+            .hero h1 {
                 font-size: 2rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .steps {
                 grid-template-columns: 1fr;
             }
-        }
 
-        /* Image placeholder styling */
-        .placeholder-img {
-            background: linear-gradient(135deg, #DDD5C7 0%, #C4BAA8 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6B5D51;
-            font-size: 1.2rem;
+            .cta-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo">Legacy Sessions</a>
+        <a href="#" class="logo">Conversations Captured</a>
         <div class="nav-links">
-            <a href="#what">What This Is</a>
-            <a href="#why">Why</a>
-            <a href="#how">How It Works</a>
-            <a href="#contact">Contact</a>
+            <a href="#experience">The Experience</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-cta">Schedule a Call</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Capture the everyday moments you'll miss the most.</h1>
-        <p>We film real, natural conversations between you and someone you love — preserving their voice, personality, and stories before time quietly changes them.</p>
-        
-        <div class="cta-buttons">
-            <a href="#contact" class="btn-primary">Request a Call</a>
-            <a href="#examples" class="btn-secondary">See Examples →</a>
+        <div class="hero-content">
+            <div class="hero-label">SAN DIEGO & SOUTHERN CALIFORNIA</div>
+            <h1>One real conversation with a parent, kept forever</h1>
+            <p>We film natural, unscripted conversations between you and your parent, filmed in their living room and crafted into a cinema-quality keepsake you can return to for years.</p>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">View All Products</a>
+                <a href="#examples" class="btn-secondary">Our services</a>
+            </div>
         </div>
 
-        <div class="hero-image placeholder-img">
-            Hero Image - Family Conversation
+        <div class="hero-image">
+            <img src="images/hero.jpg" alt="Parent and child in meaningful conversation">
+        </div>
+    </section>
+
+    <!-- Photo Grid Section -->
+    <section class="photo-grid-section">
+        <div class="photo-grid-container">
+            <div class="photo-grid-content">
+                <div class="label">THE VALUE</div>
+                <h2>Don't wait for "someday."</h2>
+                <p>Most families regret missing the small things: the familiar stories, emotions, and off-script moments before everything changed.</p>
+                <p>We capture the real version of your relationship— hesitations, emotions, and all—so you can keep it forever.</p>
+                <a href="#examples" class="btn-secondary">See more examples</a>
+            </div>
+
+            <div class="photo-grid">
+                <div class="photo-grid-item">
+                    <img src="images/conversation-1.jpg" alt="Family conversation">
+                </div>
+                <div class="photo-grid-item">
+                    <img src="images/conversation-2.jpg" alt="Family conversation">
+                </div>
+                <div class="photo-grid-item">
+                    <img src="images/conversation-3.jpg" alt="Family conversation">
+                </div>
+                <div class="photo-grid-item">
+                    <img src="images/conversation-4.jpg" alt="Family conversation">
+                </div>
+                <div class="photo-grid-item">
+                    <img src="images/conversation-1.jpg" alt="Family conversation">
+                </div>
+                <div class="photo-grid-item">
+                    <img src="images/conversation-2.jpg" alt="Family conversation">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- What This Is Section -->
-    <section id="what" class="section-alt">
-        <h2 class="section-title">What is a Legacy Session?</h2>
-        <div class="section-content">
-            <p>A Legacy Session is a simple filmed conversation designed to preserve a person — not a performance.</p>
-            <p>Not a scripted interview.<br>
-            Not a production set.</p>
-            <p>Just a comfortable, guided conversation that becomes something your family can keep and return to for years.</p>
-        </div>
-
-        <div class="features">
-            <div class="feature-item">
-                <h3>Up to 2 hours of in-home filming</h3>
-                <p>San Diego County</p>
+    <section class="two-col-section" id="experience">
+        <div class="two-col-grid">
+            <div class="two-col-content">
+                <div class="label">WHAT THIS IS</div>
+                <h2>About who they really are</h2>
+                <p>Conversations Captured isn't about performance. It's about preserving a person.</p>
+                <p>We don't script the conversation. We don't rehearse it. We don't turn it into a highlight reel.</p>
+                
+                <div class="quote">
+                    "I didn't want a polished interview. I just wanted to remember exactly how my dad tells his stories. That's what we got."
+                    <div style="margin-top: 0.5rem; font-style: normal; color: #6B5D51;">— Client, 2025</div>
+                </div>
             </div>
-            <div class="feature-item">
-                <h3>A relaxed, guided conversation</h3>
-                <p>We help the conversation flow naturally</p>
-            </div>
-            <div class="feature-item">
-                <h3>A lightly edited legacy film</h3>
-                <p>The full conversation, thoughtfully edited</p>
-            </div>
-            <div class="feature-item">
-                <h3>10–20 short clips</h3>
-                <p>You can share with family or keep privately</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Investment Section -->
-    <section>
-        <div class="pricing">
-            <h2>Investment</h2>
-            <div class="price">$1,500</div>
-            <p>We keep the process straightforward so the focus stays on the people, not the production.</p>
-            <p>No packages. No upsells. Just one meaningful session.</p>
-        </div>
-    </section>
-
-    <!-- Why Section -->
-    <section id="why" class="section-alt">
-        <h2 class="section-title">Why People Do This</h2>
-        <div class="why-content">
-            <p>Most families don't regret missing big milestones.<br>
-            They regret losing the small things.</p>
-            
-            <span class="highlight">The way your dad tells a story.</span>
-            <span class="highlight">Your mom's reactions.</span>
-            <span class="highlight">The familiar jokes and conversations you assume you'll always remember.</span>
-            
-            <p style="margin-top: 2rem;">Many people think about recording this someday.</p>
-            <p><strong>Legacy Sessions exists so someday doesn't come too late.</strong></p>
-        </div>
-    </section>
-
-    <!-- Who This Is For Section -->
-    <section>
-        <h2 class="section-title">Who This Is For</h2>
-        <div class="section-content">
-            <p>It's for families who value something real — not staged or polished.</p>
-            <p>It's not meant to be influencer content, acting, or a formal production.</p>
-            <p><strong>It's meant to feel natural and meaningful.</strong></p>
+            <div class="pricing-box">
+                <h3>The Conversations Captured Session</h3>
+                <ul>
+                    <li>Up to 2 hours of relaxed filming in your home</li>
+                    <li>A naturally-guided conversation prompt</li>
+                    <li>Soft, unobtrusive filming style</li>
+                    <li>10–20 short clips (for sharing with family)</li>
+                </ul>
+                
+                <div class="price">$1,500</div>
+                
+                <p class="pricing-note">One session keeps on cards.<br>No packages. No upsells.</p>
+            </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section id="how" class="section-alt">
-        <h2 class="section-title">How It Works</h2>
-        
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Reach out through the form</h3>
-                <p>Tell us who you'd like to capture</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>We talk briefly and plan</h3>
-                <p>A comfortable session at your home</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>We film and edit</h3>
-                <p>Deliver your legacy film and clips</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>You don't need to prepare</h3>
-                <p>We guide your conversation naturally</p>
+    <section class="how-section" id="how">
+        <div class="how-container">
+            <div class="label">HOW IT WORKS</div>
+            <h2>Your story, simply captured</h2>
+            <p class="subtitle">We handle the production so you can focus on the conversation.</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">📞</div>
+                    <h3>Reach Out</h3>
+                    <p>We handle the production so you can focus on the conversation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">📋</div>
+                    <h3>We Plan</h3>
+                    <p>Fill out the form to let us know a bit about you and what you're hoping to capture. We'll reply quickly.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">🎬</div>
+                    <h3>We Film</h3>
+                    <p>We'll create a 2-talk conversation naturally, and film it with cinematic warmth (but without making you feel like it's a big production).</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">📦</div>
+                    <h3>We Deliver</h3>
+                    <p>You receive your finished legacy film plus a set of short clips you can share with family or keep for yourself.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Style Section -->
-    <section>
-        <h2 class="section-title">Our Style</h2>
-        <div class="section-content">
-            <p>We're not trying to create a perfect version of your family.</p>
-            <p><strong>We're trying to preserve the true one.</strong></p>
-            <p>Real reactions matter more than perfect words.</p>
-            <p>The goal is something you'll genuinely want to watch again.</p>
+    <!-- Why Section -->
+    <section class="two-col-section">
+        <div class="two-col-grid">
+            <div class="two-col-content">
+                <h2>Who This Is For</h2>
+                <p>It's for families who value something real — not staged or polished.</p>
+                <p>It's not meant to be influencer content, acting, or a formal production.</p>
+                <p><strong>It's meant to feel natural and meaningful.</strong></p>
+            </div>
+
+            <div class="two-col-content">
+                <h2>Our Style</h2>
+                <p>We're not trying to create a perfect version of your family.</p>
+                <p><strong>We're trying to preserve the true one.</strong></p>
+                <p>Real reactions matter more than perfect words.</p>
+                <p>The goal is something you'll genuinely want to watch again.</p>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="form-container">
-            <h2 class="section-title">Request a call to plan a Legacy Session</h2>
-            <p style="margin-bottom: 2rem; color: #6B5D51;">Tell us a little about who you'd like to capture and we'll reach out to schedule a conversation.</p>
-            
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Your Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+    <section class="contact-section" id="contact">
+        <div class="contact-grid">
+            <div class="contact-content">
+                <div class="label">GET STARTED</div>
+                <h2>Start your Conversations Captured session.</h2>
+                <p>There's no high-pressure booking engine here. We start with a casual conversation. Just let us know a bit about what you're looking for and we'll help you plan the perfect session.</p>
                 
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="contact-info">
+                    <p><strong>hello@conversationscaptured.com</strong></p>
+                    <p>San Diego, CA</p>
                 </div>
+            </div>
+
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="who">Who do you want to capture?</label>
+                        <input type="text" id="who" name="who">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell us a little about your vision</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
                 
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                
-                <div class="form-group">
-                    <label for="who">Who would you like to capture?</label>
-                    <input type="text" id="who" name="who" placeholder="e.g., My dad, My grandmother">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Tell us a little about your situation</label>
-                    <textarea id="message" name="message" placeholder="Optional - anything that would help us understand what you're looking for"></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Send Request</button>
-            </form>
-            
-            <p style="margin-top: 2rem; text-align: center; color: #6B5D51;">
-                We'll follow up soon to schedule a call or continue over email — whichever you prefer.
-            </p>
+                <p class="form-note">
+                    We'll follow up soon to schedule a call or continue over email — whichever you prefer.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Legacy Sessions</p>
-        <p>Serving San Diego County, California</p>
+        <p>&copy; 2026 Conversations Captured • Preserving stories in San Diego</p>
     </footer>
 
     <script>
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -544,10 +727,10 @@
             });
         });
 
-        // Form submission (placeholder - no backend yet)
+        // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Form submission coming soon! For now, this is a visual preview.');
+            alert('Form submission coming soon! This is a visual preview.');
         });
     </script>
 </body>
