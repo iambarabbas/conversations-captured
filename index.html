@@ -207,6 +207,15 @@
             align-items: start;
         }
 
+        /* Full width stacked sections */
+        .stacked-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .two-col-content h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
@@ -295,11 +304,20 @@
             padding-left: 1.5rem;
         }
 
-        /* Section icons */
+        /* Section icons - using inline SVG instead */
         .section-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
             display: block;
+        }
+
+        .icon-light {
+            color: #F5F0E8;
+        }
+
+        .icon-dark {
+            color: #4A3428;
         }
 
         /* Pricing Box */
@@ -621,9 +639,11 @@
     </section>
     <!-- Who This Is For + Our Style -->
     <section class="two-col-section">
-        <div class="two-col-grid">
+        <div class="stacked-sections">
             <div class="content-box-dark">
-                <span class="section-icon">👥</span>
+                <svg class="section-icon icon-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
                 <h2>Who This Is For</h2>
                 <p>It's for families who value something real — not staged or polished.</p>
                 <p>It's not meant to be influencer content, acting, or a formal production.</p>
@@ -631,7 +651,9 @@
             </div>
 
             <div class="content-box-manifesto">
-                <span class="section-icon">🎬</span>
+                <svg class="section-icon icon-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
                 <h2>Our Style</h2>
                 <p>We're not trying to create a perfect version of your family.</p>
                 <div class="manifesto-highlight">
